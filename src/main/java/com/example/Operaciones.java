@@ -254,10 +254,16 @@ File file = new File("src/main/resources/ficheros/"+nombreLista+".txt");
 
         String listas[] = file.list();
 
-        for (int i = 0; i < listas.length; i++) {
+        if (listas != null){
+            for (int i = 0; i < listas.length; i++) {
 
-            contenido = contenido + listas[i] +"\n" + embellecedor(listarTareas2(listas[i])) + "\n";
+                contenido = contenido + listas[i] +"\n" + embellecedor(listarTareas2(listas[i])) + "\n";
+            }
         }
+        else{
+            contenido = "";
+        }
+
 
         return contenido;
     }
